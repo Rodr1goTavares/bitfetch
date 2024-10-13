@@ -1,0 +1,3 @@
+/home/RodrigoTavares/projects/c-lab/liefetch/build/CMakeFiles/bitfetch.dir
+/home/RodrigoTavares/projects/c-lab/liefetch/build/CMakeFiles/edit_cache.dir
+/home/RodrigoTavares/projects/c-lab/liefetch/build/CMakeFiles/rebuild_cache.dir
