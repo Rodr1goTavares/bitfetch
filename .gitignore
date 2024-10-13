@@ -1,0 +1,8 @@
+# Arquivos de objetos
+*.o
+*.obj
+
+# Executáveis
+*.exe
+*.out
+*.app
