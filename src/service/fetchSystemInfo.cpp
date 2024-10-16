@@ -8,7 +8,7 @@
 
 namespace FetchInfo {
 
-    std::string getOSInfo() {
+    std::string getDistroInfo() {
         std::ifstream file("/etc/os-release");
         std::string line;
         std::string distroName = "Unknown";
