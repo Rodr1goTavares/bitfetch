@@ -40,8 +40,7 @@ std::string getDistroInfo() {
 	while (std::getline(file, line)) {
 		if (line.find("NAME=") == 0) {
 			distroName = line.substr(5);
-			if (distroName[0] == '"' || distroName[0] == '\'')
-				distroName = distroName.substr(1, distroName.size() - 2);
+			if (distroName[0] == '"' || distroName[0] == '\'') distroName = distroName.substr(1, distroName.size() - 2);
 			break;
 		}
 	}
