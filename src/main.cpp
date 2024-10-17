@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <unordered_map>
 #include <cstdint>
+#include <sstream>
 
 
 std::string getDistroInfo();
@@ -13,7 +14,7 @@ std::string getShellInfo();
 std::string getUptimeInfo();
 std::string getMemoryInfo();
 std::unordered_map<std::string, std::string> getFetchData();
-void showDevFetch(std::unordered_map<std::string, std::string> fetchData);
+void showDevFetch(std::unordered_map<std::string, std::string>& fetchData);
 
 
 int main() {
@@ -72,8 +73,7 @@ std::string getUptimeInfo() {
 	int hours = static_cast<int>(totalSeconds / 3600);
 	int minutes = static_cast<int>((totalSeconds % 3600) / 60);
     std::ostringstream result;
-	if (hours != 0) result << hours << " hours and ";
-	result << minutes << " minutes";
+	result << hours << " hours and " << minutes << " minutes";
     return result.str();
 }
 
@@ -101,13 +101,13 @@ std::string getMemoryInfo() {
     std::ostringstream oss;
     oss.precision(2);
     oss << std::fixed;
-	oss << "(In use: " << (memUsed / factor) << " Gb | ";
-    oss << "Total: " << (totalMemory / factor) << " Gb)";
+    oss << "(Total: " << (totalMemory / factor) << " Gb | ";
     //oss << "Available: " << (memAvailable / factor) << " Gb\n";
+    oss << "In use: " << (memUsed / factor) << " Gb)\n";
     return oss.str();
 }
 
-void showDevFetch(std::unordered_map<std::string, std::string> fetchData) {
+void showDevFetch(std::unordered_map<std::string, std::string>& fetchData) {	
 	std::cout << "-----------------------------------\n" << std::endl;
 	std::cout << "Distro: " << fetchData["distro"] << "\n" << std::endl;
 	std::cout << "Kernel: " << fetchData["kernel"] << "\n" << std::endl;
