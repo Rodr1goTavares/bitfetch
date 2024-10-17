@@ -82,7 +82,7 @@ std::string getMemoryInfo() {
     constexpr double factor = 1024.0 * 1024.0;
 
     std::ifstream ifs{meminfo_file};
-    if (!ifs) return "Error: unable to read memory-info file.\n";
+    if (!ifs) return "Error: unable to read memory-info file.";
 
     std::string line;
     std::uint64_t totalMemory = 0, memAvailable = 0, value;
@@ -95,24 +95,25 @@ std::string getMemoryInfo() {
         if (label == "MemAvailable:") memAvailable = value;
         if (totalMemory && memAvailable) break;
     }
-    if (totalMemory == 0 || memAvailable == 0) return "Error: could not retrieve memory information.\n";
+    if (totalMemory == 0 || memAvailable == 0) return "Error: could not retrieve memory information.";
 
     auto memUsed = totalMemory - memAvailable;
     std::ostringstream oss;
     oss.precision(2);
     oss << std::fixed;
-    oss << "(Total: " << (totalMemory / factor) << " Gb | ";
-    //oss << "Available: " << (memAvailable / factor) << " Gb\n";
-    oss << "In use: " << (memUsed / factor) << " Gb)\n";
+    
+    oss << "(In use: " << (memUsed / factor) << " Gb | ";
+	//oss << "Available: " << (memAvailable / factor) << " Gb\n";
+	oss << "Total: " << (totalMemory / factor) << " Gb)";
     return oss.str();
 }
 
 void showDevFetch(std::unordered_map<std::string, std::string>& fetchData) {	
-	std::cout << "-----------------------------------\n" << std::endl;
-	std::cout << "Distro: " << fetchData["distro"] << "\n" << std::endl;
-	std::cout << "Kernel: " << fetchData["kernel"] << "\n" << std::endl;
-	std::cout << "Shell: " << fetchData["shell"] << "\n" << std::endl;
-	std::cout << "Uptime: " << fetchData["uptime"] << "\n" << std::endl;
-	std::cout << "Memory: " << fetchData["memory"] << "\n" << std::endl;
-	std::cout << "-----------------------------------" << std::endl;
+	std::cout << "+------------------------------------------------+" << std::endl;
+	std::cout << "|  Distro:   " << fetchData["distro"] << "                              |" << std::endl;
+	std::cout << "|  Kernel:   " << fetchData["kernel"] << "                               |" << std::endl;
+	std::cout << "|  Shell:    " << fetchData["shell"] << "                        |" << std::endl;
+	std::cout << "|  Uptime:   " << fetchData["uptime"] << "              |" << std::endl;
+	std::cout << "|  Memory:   " << fetchData["memory"] << "  |" << std::endl;
+	std::cout << "+------------------------------------------------+" << std::endl;
 }
