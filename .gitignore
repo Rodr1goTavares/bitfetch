@@ -1,6 +1,11 @@
+# Files
+.build
+.vscode
+
 # Arquivos de objetos
 *.o
 *.obj
+*.cmake
 
 # Executáveis
 *.exe

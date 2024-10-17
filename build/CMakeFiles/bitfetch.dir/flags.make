@@ -4,7 +4,7 @@
 # compile CXX with /sbin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/RodrigoTavares/projects/c-lab/liefetch/include
+CXX_INCLUDES = -I/home/RodrigoTavares/projects/c-lab/bitfetch/include
 
-CXX_FLAGS = -std=gnu++11
+CXX_FLAGS = -g -std=gnu++11
 

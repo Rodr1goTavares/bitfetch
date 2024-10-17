@@ -72,7 +72,8 @@ std::string getUptimeInfo() {
 	int hours = static_cast<int>(totalSeconds / 3600);
 	int minutes = static_cast<int>((totalSeconds % 3600) / 60);
     std::ostringstream result;
-	result << hours << " hours and " << minutes << " minutes";
+	if (hours != 0) result << hours << " hours and ";
+	result << minutes << " minutes";
     return result.str();
 }
 
@@ -100,9 +101,9 @@ std::string getMemoryInfo() {
     std::ostringstream oss;
     oss.precision(2);
     oss << std::fixed;
-    oss << "(Total: " << (totalMemory / factor) << " Gb | ";
+	oss << "(In use: " << (memUsed / factor) << " Gb | ";
+    oss << "Total: " << (totalMemory / factor) << " Gb)";
     //oss << "Available: " << (memAvailable / factor) << " Gb\n";
-    oss << "In use: " << (memUsed / factor) << " Gb)\n";
     return oss.str();
 }
 
