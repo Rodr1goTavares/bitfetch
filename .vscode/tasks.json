@@ -7,9 +7,12 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/fetch_info.cpp",
+                "${workspaceFolder}/src/bitfetch_design.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${workspaceFolder}/bin/bitfetch",
+                "-std=c++17"
             ],
             "options": {
                 "cwd": "${fileDirname}"

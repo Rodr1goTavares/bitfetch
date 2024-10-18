@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/RodrigoTavares/projects/c-lab/bitfetch/build",
-  "command": "/sbin/c++  -I/home/RodrigoTavares/projects/c-lab/bitfetch/include -g -std=gnu++11 -o CMakeFiles/bitfetch.dir/src/main.cpp.o -c /home/RodrigoTavares/projects/c-lab/bitfetch/src/main.cpp",
-  "file": "/home/RodrigoTavares/projects/c-lab/bitfetch/src/main.cpp",
-  "output": "CMakeFiles/bitfetch.dir/src/main.cpp.o"
-}
-]
