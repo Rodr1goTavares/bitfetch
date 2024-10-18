@@ -26,12 +26,29 @@ namespace bitfetchInfo {
 	    return distroName;
     }
 
+/*
     std::string getKernelInfo() {
 	    std::string kernelInfo;
 	    struct utsname buffer;
 	    if (uname(&buffer) != 0) return "Error to get Kernel info :(";
 	    kernelInfo += buffer.sysname;
 	    return kernelInfo;
+    }
+*/
+
+    std::string getKernelInfo() {
+        std::string kernelInfo;
+        std::ifstream versionFile("/proc/version");
+        if (!versionFile.is_open()) return "Failed to get kernel info.";
+    
+        std::getline(versionFile, kernelInfo);
+        versionFile.close();
+
+        std::istringstream iss(kernelInfo);
+        std::string word;
+
+        for (int i = 0; i < 3; ++i) iss >> word;
+        return word; 
     }
 
     std::string getShellInfo() {

@@ -13,6 +13,6 @@
 int main() {
 	std::unordered_map<std::string, std::string> fetchData = bitfetchInfo::getFetchData();
 	bitfetchDesign::showFetch(fetchData);
-	bitfetchDesign::showDevFetch(fetchData);
+	//bitfetchDesign::showDevFetch(fetchData);
 	return EXIT_SUCCESS;
 }
