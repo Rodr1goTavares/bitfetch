@@ -1,6 +1,6 @@
 # What is a Bitfetch ? (⚠️ Not finished ⚠️)  
 
-Bitfetch it's a fetch system info app like a neofetch, pfetch, fastfetch. It's a small, fast and simple alternative. It works on most of the unix system.
+Bitfetch it's a fetch system info app like a neofetch, fastfetch and pfetch. It's a small, fast and simple alternative. It works on most of the unix system.
 
 ## Installation
 
