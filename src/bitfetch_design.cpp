@@ -16,7 +16,6 @@ namespace bitfetchDesign {
 		std::cout << "╚═════════════════════════════════════════════════════╝" << std::endl;
 	}
 
-
 	void showDevFetch(std::unordered_map<std::string, std::string> &fetchData) {
 		std::cout << "╔═════════════════════════════════════════════════════╗" << std::endl;
 		std::cout << "    Distro:   " << fetchData["distro"] << std::endl;
