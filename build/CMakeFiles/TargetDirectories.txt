@@ -1,0 +1,3 @@
+/home/rodrigo/misc/ctf-lab/bitfetch/build/CMakeFiles/bitfetch.dir
+/home/rodrigo/misc/ctf-lab/bitfetch/build/CMakeFiles/edit_cache.dir
+/home/rodrigo/misc/ctf-lab/bitfetch/build/CMakeFiles/rebuild_cache.dir
